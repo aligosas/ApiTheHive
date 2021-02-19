@@ -1,7 +1,5 @@
 ![Banner](https://user-images.githubusercontent.com/79227109/108462615-e3cde500-724a-11eb-8748-aa9a99645856.png)
 
-### Por: Sebastián Larrea Henao 
-
 # Inteligencia de amenazas
 Una plataforma de inteligencia de amenazas automatiza el procesamiento y análisis de datos de múltiples fuentes mejorando la seguridad de SIEM.  Esto alivia la sobrecarga del personal proporcionándoles un medio eficaz de análisis en tiempo real. De este modo, los equipos de seguridad pueden responder con mayor rapidez y precisión a las amenazas.
  
@@ -28,9 +26,10 @@ MISP es una plataforma de inteligencia contra amenazas especialmente utilizada p
 
 Junto con MISP, Cortex es el compañero perfecto para TheHive . TheHive le permite analizar decenas o cientos de observables en unos pocos clics aprovechando una o varias instancias de Cortex según sus necesidades de OPSEC y requisitos de rendimiento. Además, TheHive viene con un motor de plantillas de informes que le permite ajustar la salida de los analizadores Cortex a su gusto en lugar de tener que crear sus propios analizadores JSON para la salida Cortex.
 
-TheHive y Cortex cuentan con un cliente API cada uno, ambos son consumidos a través de modulos de python, esto permite la creación de un script que ayude a la automatización ce estas tareas que deben ser ejecutadas por el FronEnd, lo cuál hace que el proceso de gestión de incidentes sea aún más eficientes.
+TheHive y Cortex cuentan con un cliente API cada uno, ambos son consumidos a través de modulos de python, esto permite la creación de un script que ayude a la automatización ce estas tareas que deben ser ejecutadas por el "front end", lo cuál hace que el proceso de gestión de incidentes sea aún más eficientes.
 
-El flujo de trabajo de nuestra plataforma consiste en el reenvío de logs de nuestros controles a TheHive a través de ElastAlert, para este procedimiento lo más importante es la elección de observables que contienen las alertas (Es decir, la información relevante que merece ser analizada). Luego de reenviadas las alertas a TheHive se crean casos en los cuales se corren analisis a los observables, esto dependiendo de que tipo de observables sean (Ip, dominio, hash, file), los analizadores utilizados para correr estos analisis son los que se encuentran contenidos en Cortex. Todo esto se puede hacer desde TheHive gracias a la posibilidad de integración de estas dos herramientas. Basado en los resultados obtenidos en los análisis tenemos la opción de ejecutar **reponders**, un responder es un programa que toma la entrada JSON y realiza una acción y produce un resultado básico de esa acción.  
+El flujo de trabajo de nuestra plataforma consiste en el reenvío de logs de nuestros controles a TheHive a través de ElastAlert, para este procedimiento lo más importante es la elección de observables que contienen las alertas (Es decir, la información relevante que merece ser analizada). Luego de reenviadas las alertas a TheHive se crean casos en los cuales se corren **"analyzers"** a los observables, esto dependiendo de que tipo de observables sean (Ip, dominio, hash, file), los "analyzers" utilizados para correr estos analisis son los que se encuentran contenidos en Cortex. Todo esto se puede hacer desde TheHive gracias a la posibilidad de integración de estas dos herramientas. Basado en los resultados obtenidos en los análisis tenemos la opción de ejecutar **"reponders"**, un  "responder" es un programa que toma la entrada JSON y realiza una acción y produce un resultado básico de esa acción.  
+
 
 <p align="center" width="100%">
     <img width="80%" src="https://user-images.githubusercontent.com/79227109/108469498-54c6ca00-7256-11eb-9797-6535ff5d0253.png"> 
